@@ -1,0 +1,27 @@
+import sys
+import math
+
+print("Número de parámetros: ", len(sys.argv))
+print("Lista de argumentos: ", sys.argv)
+
+fuelTotal = 0
+with open(sys.argv[1],'r') as file:
+	for line in file:
+		fuelTotal = fuelTotal + (int(int(line)/3) - 2)
+print("The sum of the fuel is ",fuelTotal)
+
+fuelTotal2= 0
+
+with open(sys.argv[2],'r') as file2:
+	for line in file2:
+		fuelTotalLine = 0
+		while int(line) >= 9: #9/3 = 3 - 2 = 1 y si fuera 8/3 = 2 -2 = 0 
+			line = (int(int(line)/3) - 2)
+			fuelTotalLine = fuelTotalLine + line
+			print(fuelTotalLine)
+		fuelTotal2 = fuelTotal2 + fuelTotalLine
+
+print("The sum of the fuel requirements for all of the modules", fuelTotal2)
+
+
+		
